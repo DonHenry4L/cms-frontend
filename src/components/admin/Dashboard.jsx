@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAppInfo } from "../../api/admin";
+// import { getAppInfoByAuthor } from "../../api/author";
 import { useNotification } from "../../hooks";
 import AppInfoBox from "../AppInfoBox";
 import LatestUploads from "../LatestUploads";
@@ -25,6 +26,18 @@ export default function Dashboard() {
   useEffect(() => {
     fetchAppInfo();
   }, []);
+
+  // const fetchAppInfoByAuthor = async () => {
+  //   const { appInfo, error } = await getAppInfoByAuthor();
+
+  //   if (error) return updateNotification("error", error);
+
+  //   setAppInfo({ ...appInfo });
+  // };
+
+  // useEffect(() => {
+  //   fetchAppInfoByAuthor();
+  // }, []);
 
   return (
     <div className='grid grid-cols-3 gap-5 p-5'>

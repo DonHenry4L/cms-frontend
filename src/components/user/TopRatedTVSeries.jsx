@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Marquee from "react-fast-marquee";
 
 import { getTopRatedMovies } from "../../api/movie";
 import { useNotification } from "../../hooks";
@@ -24,5 +25,5 @@ export default function TopRatedTVSeries() {
     };
   }, []);
 
-  return <MovieList movies={movies} title='Viewers Choice (TV Series)' />;
+  return <MovieList movies={movies} title='TV Series (viewers choice)' />;
 }

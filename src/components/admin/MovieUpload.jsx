@@ -26,36 +26,36 @@ export default function MovieUpload({ visible, onClose }) {
     updateNotification("error", error);
   };
 
-  const handleUploadTrailer = async (data) => {
-    const { error, url, public_id } = await uploadTrailer(
-      data,
-      setUploadProgress
-    );
-    if (error) return updateNotification("error", error);
+  // const handleUploadTrailer = async (data) => {
+  //   const { error, url, public_id } = await uploadTrailer(
+  //     data,
+  //     setUploadProgress
+  //   );
+  //   if (error) return updateNotification("error", error);
 
-    setVideoUploaded(true);
-    setVideoInfo({ url, public_id });
-  };
+  //   setVideoUploaded(true);
+  //   setVideoInfo({ url, public_id });
+  // };
 
-  const handleChange = (file) => {
-    const formData = new FormData();
-    formData.append("video", file);
+  // const handleChange = (file) => {
+  //   const formData = new FormData();
+  //   formData.append("video", file);
 
-    setVideoSelected(true);
-    handleUploadTrailer(formData);
-  };
+  //   setVideoSelected(true);
+  //   handleUploadTrailer(formData);
+  // };
 
-  const getUploadProgressValue = () => {
-    if (!videoUploaded && uploadProgress >= 100) {
-      return "Processing";
-    }
+  // const getUploadProgressValue = () => {
+  //   if (!videoUploaded && uploadProgress >= 100) {
+  //     return "Processing";
+  //   }
 
-    return `Upload progress ${uploadProgress}%`;
-  };
+  //   return `Upload progress ${uploadProgress}%`;
+  // };
 
   const handleSubmit = async (data) => {
-    if (!videoInfo.url || !videoInfo.public_id)
-      return updateNotification("error", "Trailer is missing!");
+    // if (!videoInfo.url || !videoInfo.public_id)
+    //   return updateNotification("error", "Trailer is missing!");
 
     setBusy(true);
     data.append("trailer", JSON.stringify(videoInfo));
@@ -64,15 +64,14 @@ export default function MovieUpload({ visible, onClose }) {
 
     if (error) return updateNotification("error", error);
 
-    updateNotification("success", "Movie Uploaded Successfully!");
-
+    updateNotification("success", "Movie uploads successfully.");
     resetState();
     onClose();
   };
 
   return (
     <ModalContainer visible={visible}>
-      <div className='mb-5'>
+      {/* <div className='mb-5'>
         <UploadProgress
           visible={!videoUploaded && videoSelected}
           message={getUploadProgressValue()}
@@ -85,13 +84,13 @@ export default function MovieUpload({ visible, onClose }) {
           onTypeError={handleTypeError}
           handleChange={handleChange}
         />
-      ) : (
-        <MovieForm
-          btnTitle='Upload'
-          busy={busy}
-          onSubmit={!busy ? handleSubmit : null}
-        />
-      )}
+      ) : ( */}
+      <MovieForm
+        btnTitle='Upload'
+        busy={busy}
+        onSubmit={!busy ? handleSubmit : null}
+      />
+      {/* )} */}
     </ModalContainer>
   );
 }

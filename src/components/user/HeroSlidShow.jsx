@@ -122,50 +122,57 @@ export default function HeroSlidShow() {
       updateUpNext(count);
     } else pauseSlideShow();
   }, [slides.length, visible]);
-
   return (
-    <div className='w-full flex'>
-      {/* Slide show section */}
-      <div className='md:w-4/5 w-full aspect-video relative overflow-hidden'>
-        {/* current slide */}
-        <Slide
-          ref={slideRef}
-          title={currentSlide.title}
-          src={currentSlide.poster}
-          id={currentSlide.id}
-        />
+    <div>
+      <span className='uppercase text-xs text-highlight dark:text-highlight-dark font-bold'>
+        Latest Movies
+      </span>
+      <p className='text-2xl dark:text-white text-secondary font-semibold mb-5'>
+        Latest Movies & TV Shows
+      </p>
+      <div className='w-full flex h-[29rem] blur-0 backdrop-blur-0'>
+        {/* Slide show section */}
+        <div className='md:w-4/5 w-full aspect-video relative overflow-hidden backdrop-blur-0 blur-none'>
+          {/* current slide */}
+          <Slide
+            ref={slideRef}
+            title={currentSlide.title}
+            src={currentSlide.poster}
+            id={currentSlide.id}
+          />
 
-        {/* cloned slide */}
-        <Slide
-          ref={clonedSlideRef}
-          onAnimationEnd={handleAnimationEnd}
-          className='absolute inset-0'
-          src={clonedSlide.poster}
-          title={clonedSlide.title}
-          id={currentSlide.id}
-        />
+          {/* cloned slide */}
+          <Slide
+            ref={clonedSlideRef}
+            onAnimationEnd={handleAnimationEnd}
+            className='absolute inset-0 blur-0 backdrop-blur-0'
+            src={clonedSlide.poster}
+            title={clonedSlide.title}
+            id={currentSlide.id}
+          />
 
-        <SlideShowController
-          onNextClick={handleOnNextClick}
-          onPrevClick={handleOnPrevClick}
-        />
-      </div>
+          <SlideShowController
+            onNextClick={handleOnNextClick}
+            onPrevClick={handleOnPrevClick}
+          />
+        </div>
 
-      {/* Up Next Section */}
-      <div className='w-1/5 md:block hidden space-y-3 px-3'>
-        <h1 className='font-semibold text-2xl text-primary dark:text-white'>
-          Up Next
-        </h1>
-        {upNext.map(({ poster, id }) => {
-          return (
-            <img
-              key={id}
-              src={poster}
-              alt=''
-              className='aspect-video object-cover rounded'
-            />
-          );
-        })}
+        {/* Up Next Section */}
+        <div className='w-[10%] md:block hidden space-y-3 px-3'>
+          <h1 className='font-semibold text-2xl text-primary dark:text-white'>
+            Up Next
+          </h1>
+          {upNext.map(({ poster, id }) => {
+            return (
+              <img
+                key={id}
+                src={poster}
+                alt=''
+                className='aspect-video object-cover rounded h-36'
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -173,7 +180,7 @@ export default function HeroSlidShow() {
 
 const SlideShowController = ({ onNextClick, onPrevClick }) => {
   const btnClass =
-    "bg-primary rounded border-2 text-white text-xl p-2 outline-none";
+    " rounded border-none text-white text-xl p-2 outline-none hover:bg-primary";
   return (
     <div className='absolute top-1/2 -translate-y-1/2 w-full flex items-center justify-between px-2'>
       <button onClick={onPrevClick} className={btnClass} type='button'>

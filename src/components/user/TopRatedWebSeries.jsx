@@ -24,5 +24,5 @@ export default function TopRatedWebSeries() {
     };
   }, []);
 
-  return <MovieList movies={movies} title='Viewers choice (Web Series)' />;
+  return <MovieList movies={movies} title='Web Series (viewers choice)' />;
 }

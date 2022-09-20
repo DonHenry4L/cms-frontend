@@ -27,7 +27,7 @@ export default function AppSearchForm({
       <input
         type='text'
         className={
-          "border-2 transition bg-transparent rounded text-lg p-1 outline-none " +
+          "border-2 transition bg-transparent rounded p-1 outline-none min-w-0 block w-full px-3 py-1.5 text-base bg-clip-padding " +
           inputClassName
         }
         placeholder={placeholder}

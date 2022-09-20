@@ -29,6 +29,7 @@ export const updateActor = async (id, formData) => {
     return catchError(error);
   }
 };
+
 export const deleteActor = async (id) => {
   const token = getToken();
   try {

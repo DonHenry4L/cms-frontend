@@ -1,0 +1,64 @@
+/* .contact__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+.contact__form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff38e;
+} */
+
+.container {
+  position: relative;
+  min-width: 1100px;
+  min-height: 550px;
+  display: flex;
+  background: transparent;
+}
+.container__info {
+  position: absolute;
+  top: 40px;
+  width: 350px;
+  height: calc(100% - 80px);
+  background: blue;
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.container .contact__form {
+  position: absolute;
+  padding: 70px 50px;
+  padding-left: 250px;
+  margin-left: 150px;
+  width: calc(100% - 150px);
+  height: 100%;
+  background: skyblue;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+}
+
+.container .contact__form .form__box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.container .contact__form .form__box .input__box {
+  position: relative;
+  margin-bottom: 35px;
+}
+.container .contact__form .form__box .input__box.w50 {
+  width: 47%;
+}

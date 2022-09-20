@@ -4,7 +4,7 @@ import { getTopRatedMovies } from "../../api/movie";
 import { useNotification } from "../../hooks";
 import MovieList from "./MovieList";
 
-export default function TopRatedMovies() {
+export default function TopRatedMovies({ title }) {
   const [movies, setMovies] = useState([]);
   const { updateNotification } = useNotification();
 
@@ -24,5 +24,5 @@ export default function TopRatedMovies() {
     };
   }, []);
 
-  return <MovieList movies={movies} title='Viewers choice (Movies)' />;
+  return <MovieList movies={movies} title='Movie (viewers choice)' />;
 }

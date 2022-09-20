@@ -131,7 +131,7 @@ export default function EmailVerification() {
                   value={otp[index] || ""}
                   onChange={(e) => handleOtpChange(e, index)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
-                  className='w-12 h-12 border-2  dark:border-dark-subtle border-light-subtle dark:focus:border-white focus:border-primary rounded bg-transparent outline-none text-center dark:text-white text-primary font-semibold text-xl spin-button-none'
+                  className='w-12 h-12 border-2 dark:border-dark-subtle border-light-subtle dark:focus:border-white focus:border-primary rounded bg-transparent outline-none text-center dark:text-white text-primary font-semibold text-xl spin-button-none'
                 />
               );
             })}
@@ -147,6 +147,17 @@ export default function EmailVerification() {
               I don't have OTP
             </button>
           </div>
+          <span className='dark:text-white text-blue-500 font-semibold hover:underline mt-2 text-sm hover:text-gray-500 hover:dark:text-gray-600'>
+            If{" "}
+            <strong className='dark:text-red-300 text-red-300 text-xs'>
+              Token not found
+            </strong>{" "}
+            Click on{" "}
+            <strong className='dark:text-red-300 text-red-300 text-xs'>
+              {" "}
+              I don't have OTP
+            </strong>
+          </span>
         </form>
       </Container>
     </FormContainer>

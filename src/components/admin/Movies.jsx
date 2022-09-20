@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { deleteMovie, getMovieForUpdate, getMovies } from "../../api/movie";
+// import { deleteMovie, getMovieForUpdate, getMovies } from "../../api/movie";
 import { useMovies, useNotification } from "../../hooks";
-import ConfirmModal from "../modals/ConfirmModal";
-import UpdateMovie from "../modals/UpdateMovie";
+// import ConfirmModal from "../modals/ConfirmModal";
+// import UpdateMovie from "../modals/UpdateMovie";
 import MovieListItem from "../MovieListItem";
 import NextAndPrevButton from "../NextAndPrevButton";
 
-let limit = 10;
-let currentPageNo = 0;
+// let limit = 10;
+// let currentPageNo = 0;
 
 export default function Movies() {
-  const [movies, setMovies] = useState([]);
-  const [reachedToEnd, setReachedToEnd] = useState([]);
-  const [busy, setBusy] = useState(false);
-  const [showUpdateModal, setShowUpdateModal] = useState(false);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const [selectedMovie, setSelectedMovie] = useState(null);
+  // const [movies, setMovies] = useState([]);
+  // const [reachedToEnd, setReachedToEnd] = useState([]);
+  // const [busy, setBusy] = useState(false);
+  // const [showUpdateModal, setShowUpdateModal] = useState(false);
+  // const [showConfirmModal, setShowConfirmModal] = useState(false);
+  // const [selectedMovie, setSelectedMovie] = useState(null);
 
-  const { updateNotification } = useNotification();
+  // const { updateNotification } = useNotification();
 
   const {
     fetchMovies,

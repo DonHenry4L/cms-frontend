@@ -5,7 +5,7 @@ export const validateMovie = (movieInfo) => {
     language,
     releasedDate,
     status,
-    type,
+    category,
     genres,
     tags,
     cast,
@@ -16,7 +16,7 @@ export const validateMovie = (movieInfo) => {
   if (!language.trim()) return { error: "Language is missing!" };
   if (!releasedDate.trim()) return { error: "Released date is missing!" };
   if (!status.trim()) return { error: "Status is missing!" };
-  if (!type.trim()) return { error: "Type is missing!" };
+  if (!category.trim()) return { error: "Category is missing!" };
 
   // Validation for genres
   //  checking if the genres is array or not
@@ -46,4 +46,12 @@ export const validateMovie = (movieInfo) => {
   }
 
   return { error: null };
+};
+
+export const postValidator = (postInfo) => {
+  const { title, category, content } = postInfo;
+
+  if (!title.trim()) return { error: "Post Title is required!" };
+  if (!category.trim()) return { error: "Category is missing!" };
+  if (!content.trim()) return { error: "Content is missing!" };
 };

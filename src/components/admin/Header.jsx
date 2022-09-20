@@ -5,14 +5,21 @@ import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../hooks";
 import AppSearchForm from "../form/AppSearchForm";
 
-export default function Header({ onAddMovieClick, onAddActorClick }) {
+export default function Header({
+  onAddMovieClick,
+  onAddActorClick,
+  onAddCategoryClick,
+  onAddPostClick,
+}) {
   const [showOptions, setShowOptions] = useState(false);
   const { toggleTheme } = useTheme();
 
   const navigate = useNavigate();
   const options = [
     { title: "Add Movie", onClick: onAddMovieClick },
+    { title: "Add Post", onClick: onAddPostClick },
     { title: "Add Actor", onClick: onAddActorClick },
+    { title: "Add Category", onClick: onAddCategoryClick },
   ];
 
   const handleSearchSubmit = (query) => {
@@ -65,7 +72,7 @@ const CreateOptions = ({ options, visible, onClose }) => {
       if (parentElement.id === containerID || id === containerID) return;
 
       container.current.classList.remove("animate-scale");
-      //   container.current.classList.add("animate-scale-reverse");
+      // container.current.classList.add("animate-scale-reverse");
     };
 
     document.addEventListener("click", handleClose);

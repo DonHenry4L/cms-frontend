@@ -1,7 +1,7 @@
 import React from "react";
 import { ImSpinner3 } from "react-icons/im";
 
-export default function Submit({ value, busy, type, onClick }) {
+export default function Submit({ value, busy, type, onClick, title }) {
   return (
     <button
       type={type || "submit"}
@@ -9,6 +9,7 @@ export default function Submit({ value, busy, type, onClick }) {
       onClick={onClick}
     >
       {busy ? <ImSpinner3 className='animate-spin' /> : value}
+      {title}
     </button>
   );
 }

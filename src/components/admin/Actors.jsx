@@ -9,7 +9,7 @@ import NextAndPrevButton from "../NextAndPrevButton";
 import NotFoundText from "../NotFoundText";
 
 let currentPageNo = 0;
-const limit = 20;
+const limit = 50;
 
 export default function Actors() {
   const [actors, setActors] = useState([]);
@@ -85,13 +85,13 @@ export default function Actors() {
   };
 
   const handleOnDeleteConfirm = async () => {
-    // setBusy(true);
-    // const { error, message } = await deleteActor(selectedProfile.id);
-    // setBusy(false);
-    // if (error) return updateNotification("error", error);
-    // updateNotification("success", message);
-    // hideConfirmModal();
-    // fetchActors(currentPageNo);
+    setBusy(true);
+    const { error, message } = await deleteActor(selectedProfile.id);
+    setBusy(false);
+    if (error) return updateNotification("error", error);
+    updateNotification("success", message);
+    hideConfirmModal();
+    fetchActors(currentPageNo);
   };
 
   const hideConfirmModal = () => setShowConfirmModal(false);
@@ -178,7 +178,7 @@ const ActorProfile = ({ profile, onEditClick, onDeleteClick }) => {
   const getName = (name) => {
     if (name.length <= acceptedNameLength) return name;
 
-    return name.substring(0, acceptedNameLength) + "..";
+    return name.substring(0, acceptedNameLength) + "...";
   };
 
   const { name, avatar, about = "" } = profile;

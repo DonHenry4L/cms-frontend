@@ -3,8 +3,9 @@
   top: 0;
   width: 100%;
   padding: 20px;
-  height: 30px;
+  height: 70px;
   z-index: 1;
+  margin-top: -25px;
 
   /* Animations */
   transition-timing-function: ease-in;
@@ -12,13 +13,13 @@
 }
 
 .nav__black {
-  background-color: #111;
+  background-color: #161538;
 }
-
+/* 
 .nav__bar {
   margin-top: -1.3rem;
   height: 2rem;
-}
+} */
 
 /* .nav__logo {
   position: fixed;
